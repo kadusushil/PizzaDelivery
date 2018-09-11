@@ -1,0 +1,58 @@
+[
+  {
+    "id" : 111111,
+    "title": "Neapolitan Pizza",
+    "description": "Neapolitan is the original pizza. This delicious pie dates all the way back to 18th century in Naples, Italy. During this time, the poorer citizens of this seaside city frequently purchased food that was cheap and could be eaten quickly. Luckily for them, Neapolitan pizza – a flatbread with tomatoes, cheese, oil, and garlic – was affordable and readily available through numerous street vendors.",
+    "price": "$4.59",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-margherita-.jpg"
+  },
+  {
+    "id" : 222222,
+    "title": "Chicago Pizza",
+    "description": "Chicago pizza, also commonly referred to as deep-dish pizza, gets its name from the city it was invented in. During the early 1900’s, Italian immigrants in the windy city were searching for something similar to the Neapolitan pizza that they knew and loved. Instead of imitating the notoriously thin pie, Ike Sewell had something else in mind. He created a pizza with a thick crust that had raised edges, similar to a pie, and ingredients in reverse, with slices of mozzarella lining the dough followed by meat, vegetables, and then topped with a can of crushed tomatoes. This original creation led Sewell to create the now famous chain restaurant, Pizzeria Uno.",
+    "price": "$5.59",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-deepdish.jpg"
+  },
+  {
+    "id" : 333333,
+    "title": "New York Style Pizza",
+    "description": "While New York-style pizza isn’t exactly the original, it’s become the most popular and widespread choice in the United States. Even though Neapolitan and New York pizzas share similarities, there are distinct differences. Some people will tell you that it’s the minerals in the Big Apple’s water used to make the dough that makes this pizza stand out. However, in order to make a proper New York-style pie, the crust still needs to be thin, like a Neapolitan, but thick enough to fold a slice in half lengthwise. This simplifies eating the pizza without utensils, which is a necessity in New York City's fast-paced setting.",
+    "price": "$5.19",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/flat.jpg"
+  },
+  {
+    "id" : 444444,
+    "title": "Sicilian Pizza",
+    "description": "Sicilian pizza, also known as sfincione, may seem like a distant cousin of a Chicago-style pie, but the two have their differences. It's not even the same pizza that you'd get in Sicily. So what’s the deal with this complicated pizza? Well, no matter what country you get this square cut, thick crust pizza from, it should always have a spongier consistency than other pizzas. However, sfincione is typically topped with a tomato sauce, onions, herbs, anchovies, and then covered with bread crumbs. This version is typically served on holidays like Christmas and New Year’s Eve in Sicily. But in America, Sicilian pizza features a simple combination of tomato sauce and mozzarella cheese and is eaten all year round.",
+    "price": "$3.99",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/rectangle.jpg"
+  },
+  {
+    "id" : 555555,
+    "title": "Greek Pizza",
+    "description": "oppings, nor was it invented in Greece. In fact, pizza isn’t even a common dish in the Mediterranean country, despite its close location to pizza’s birth place, Italy. Greek pizza was created by Greek immigrants who came to America and were introduced to Italian pizza. Instead of following the strict guidelines of New York or Chicago-style, Greek pizza has its own rules. While this style has a crust that is puffier and chewier than thin crust pizzas, it’s not quite as thick as a deep-dish or Sicilian crust. Greek pizza also typically uses a tangy tomato paste that has a strong oregano flavor and is topped with a blend of mozzarella and cheddar cheese.",
+    "price": "$4.00",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/onions.jpg"
+  },
+  {
+    "id" : 666666,
+    "title": "California Pizza",
+    "description": "California pizza, or gourmet pizza, is known for its unusual ingredients. This pizza got its start back in the late 1970’s when Chef Ed LaDou began experimenting with pizza recipes in the classic Italian restaurant, Prego. By chance, he served one of his newest creations, mustard, ricotta, pate, and red pepper, to Wolfgang Puck. Impressed with LaDou’s innovative pie, Puck invited him to be a head pizza chef at his restaurant. It was here that LaDou came up with over 250 unique pizza recipes that eventually formed the menu of chain restaurant, California Pizza Kitchen.",
+    "price": "$6.00",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-gourmet.jpg"
+  },
+  {
+    "id" : 777777,
+    "title": "Tomato Pie",
+    "description": "Derived from Sicilian pizza, Italian tomato pie is a thick crust, square cut pizza that features focaccia-like dough and plenty of sweet and tangy tomato sauce. If you travel to Philadelphia to try a square of this delicious treat, it’ll most likely feature “gravy” - another name for tomato sauce - poured over a crispy and doughy crust. However, in other areas, tomato pie can feature cheese and other toppings with the sauce poured over top. But what makes tomato pie really stand out amongst other pizza options is the fact that it is commonly served and eaten at room temperature.",
+    "price": "$5.99",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/red_02.jpg"
+  },
+  {
+    "id" : 888888,
+    "title": "Alternative Pizza Types",
+    "description": "The different toppings and styles of pizza are endless. While traditional pizza toppings, like pepperoni and veggies, may initially draw customers into your business, unique pizzas, like cheeseburger and bacon cheese fry, will draw in even more curious and hungry customers. You can even explore different crust options like pretzel or stuffed.",
+    "price": "$3.50",
+    "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/red_02.jpg"
+  }
+]
