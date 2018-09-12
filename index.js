@@ -10,8 +10,6 @@ const _data = require('./lib/data');
 const config = require('./lib/config');
 const server = require('./lib/server');
 
-console.log('Hello World');
-
 var app = {};
 
 app.init = () => {
