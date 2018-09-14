@@ -45,7 +45,7 @@ Following is sample Body
 ,"pinCode" : "440025"
 }
 
-Note: After signup, you do not immediately get token. You need to login to get
+**Note:** After signup, you do not immediately get token. You need to login to get
       token which can be used for sub-sequent api calls.
 
 ## Delete user
@@ -104,9 +104,10 @@ Response:
 * QueryString : email=validEmail@OfTheUser.com
 * Body:
 email and other fields which you want to update.
-Note 1: You can not update email
 
-Note 2: You can pass email either in query string or through body. Either of it
+**Note 1:** You can not update email
+
+**Note 2:** You can pass email either in query string or through body. Either of it
 is mandatory.
 
 Sample URL:
@@ -138,16 +139,16 @@ You will get whole response with update data.
 * QueryString: email=validEmail@OfTheUser.com
 * Body: email=validEmail@OfTheUser.com
 
-Note: Email can be passed either through query string or through body. Either of
+**Note:** Email can be passed either through query string or through body. Either of
 it is mandatory.
 
 Sample Response:
 {} // empty object
 
 ## Get pizza menu
-Method: GET
-Endpoint: http://localhost:8000/menu
-Headers: token (valid token)
+* Method: GET
+* Endpoint: http://localhost:8000/menu
+* Headers: token (valid token)
 
 Sample Response:
 [
