@@ -49,6 +49,8 @@ Following is sample Body
 Note: After signup, you do not immediately get token. You need to login to get
       token which can be used for sub-sequent api calls.
 
+## Delete user
+
 ## Login
 Method: POST
 Endpoint: http://localhost:8000/auth
@@ -141,3 +143,123 @@ it is mandatory.
 
 Sample Response:
 {} // empty object
+
+## Get pizza menu
+Method: GET
+Endpoint: http://localhost:8000/menu
+Headers: token (valid token)
+
+Sample Response:
+[
+    {
+        "id": 111111,
+        "title": "Neapolitan Pizza",
+        "description": "Neapolitan is the original pizza. This delicious pie dates all the way back to 18th century in Naples, Italy. During this time, the poorer citizens of this seaside city frequently purchased food that was cheap and could be eaten quickly. Luckily for them, Neapolitan pizza – a flatbread with tomatoes, cheese, oil, and garlic – was affordable and readily available through numerous street vendors.",
+        "price": "$4.59",
+        "picture": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-margherita-.jpg"
+    },
+    {
+        "id": 222222,
+        "title": "Chicago Pizza",
+        "description": "Chicago pizza, also commonly referred to as deep-dish pizza, gets its name from the city it was invented in. During the early 1900’s, Italian immigrants in the windy city were searching for something similar to the Neapolitan pizza that they knew and loved. Instead of imitating the notoriously thin pie, Ike Sewell had something else in mind. He created a pizza with a thick crust that had raised edges, similar to a pie, and ingredients in reverse, with slices of mozzarella lining the dough followed by meat, vegetables, and then topped with a can of crushed tomatoes. This original creation led Sewell to create the now famous chain restaurant, Pizzeria Uno.",
+        "price": "$5.59",
+        "picture": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-deepdish.jpg"
+    },
+    {... other options ...}
+  ]
+
+
+## Add item/items to cart
+Method: POST
+Endpoint: http://localhost:8000/cart
+Headers: token
+QueryString: email
+Body: Array with itemid and quantity. Please see sample data below.
+
+{"id":222222, "quantity":4}
+
+This tells server, what type of pizza and in how much quantity.
+If the id is not valid then error is returned
+
+Sample Response : It will return current cart
+[
+    {
+        "id": 333333,
+        "title": "New York Style Pizza",
+        "description": "While New York-style pizza isn’t exactly the original, it’s become the most popular and widespread choice in the United States. Even though Neapolitan and New York pizzas share similarities, there are distinct differences. Some people will tell you that it’s the minerals in the Big Apple’s water used to make the dough that makes this pizza stand out. However, in order to make a proper New York-style pie, the crust still needs to be thin, like a Neapolitan, but thick enough to fold a slice in half lengthwise. This simplifies eating the pizza without utensils, which is a necessity in New York City's fast-paced setting.",
+        "price": "$5.19",
+        "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/flat.jpg",
+        "quantity": 4
+    },
+    {
+        "id": 444444,
+        "title": "Sicilian Pizza",
+        "description": "Sicilian pizza, also known as sfincione, may seem like a distant cousin of a Chicago-style pie, but the two have their differences. It's not even the same pizza that you'd get in Sicily. So what’s the deal with this complicated pizza? Well, no matter what country you get this square cut, thick crust pizza from, it should always have a spongier consistency than other pizzas. However, sfincione is typically topped with a tomato sauce, onions, herbs, anchovies, and then covered with bread crumbs. This version is typically served on holidays like Christmas and New Year’s Eve in Sicily. But in America, Sicilian pizza features a simple combination of tomato sauce and mozzarella cheese and is eaten all year round.",
+        "price": "$3.99",
+        "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/rectangle.jpg",
+        "quantity": 4
+    }
+]
+Note: When you send items to cart, it checks the existing cart and if item is
+found in cart then it's count is incremented otherwise it is added to the cart.
+
+## Get current cart
+Method: GET
+Endpoint: http://localhost:8000/cart?email=validEmailAddress@test.com
+Headers: token
+QueryString: email
+Body: Array with itemid and quantity. Please see sample data below.
+
+The response would be similar one mentioned above in add cart(POST)
+
+## Delete the cart
+Method: DELETE
+Endpoint: http://localhost:8000/cart?email=validEmailAddress@test.com
+Headers: token
+QueryString: email
+Body: email
+You can pass email in either queryString or as a part of body
+
+## Checkout the cart
+Method: POST
+Endpoint: http://localhost:8000/checkout
+Headers: token
+QueryString: email (email=valid@email.com)
+Body: stripeToken and email (email can be sent as part of queryString also)
+
+{"stripeToken":"<<valid stripe token>>"}
+
+Sample Response:
+{
+    "order_id": "rg0ucdk34c"
+}
+
+## Order History
+Method: POST
+Endpoint: http://localhost:8000/history
+Headers : token
+Body : email and orderId
+Sample Body: {"orderId":"rg0ucdk34c", "email":"validemail@test.com"}
+
+Sample Response:
+{
+    "order_id": "rg0ucdk34c",
+    "details": [
+        {
+            "id": 444444,
+            "title": "Sicilian Pizza",
+            "description": "Sicilian pizza, also known as sfincione, may seem like a distant cousin of a Chicago-style pie, but the two have their differences. It's not even the same pizza that you'd get in Sicily. So what’s the deal with this complicated pizza? Well, no matter what country you get this square cut, thick crust pizza from, it should always have a spongier consistency than other pizzas. However, sfincione is typically topped with a tomato sauce, onions, herbs, anchovies, and then covered with bread crumbs. This version is typically served on holidays like Christmas and New Year’s Eve in Sicily. But in America, Sicilian pizza features a simple combination of tomato sauce and mozzarella cheese and is eaten all year round.",
+            "price": "$3.99",
+            "picture": "https://cdnimg.webstaurantstore.com/uploads/blog/2016/8/rectangle.jpg",
+            "quantity": 2
+        },
+        {
+            "id": 222222,
+            "title": "Chicago Pizza",
+            "description": "Chicago pizza, also commonly referred to as deep-dish pizza, gets its name from the city it was invented in. During the early 1900’s, Italian immigrants in the windy city were searching for something similar to the Neapolitan pizza that they knew and loved. Instead of imitating the notoriously thin pie, Ike Sewell had something else in mind. He created a pizza with a thick crust that had raised edges, similar to a pie, and ingredients in reverse, with slices of mozzarella lining the dough followed by meat, vegetables, and then topped with a can of crushed tomatoes. This original creation led Sewell to create the now famous chain restaurant, Pizzeria Uno.",
+            "price": "$5.59",
+            "picture": "https://cdnimg.webstaurantstore.com/uploads/buying_guide/2014/11/pizzatypes-deepdish.jpg",
+            "quantity": 2
+        }
+    ]
+}
