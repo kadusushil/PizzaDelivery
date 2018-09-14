@@ -29,11 +29,10 @@ $ NODE_ENV=production node index.js // for production environment
 It offers following services.
 
 ## Create new user
-Method: POST
-Endpoint: http://localhost:8000/user
-Headers: None
-Body: It should have following mandatory fields
-
+* Method: POST
+* Endpoint: http://localhost:8000/user
+* Headers: None
+* Body: It should have following mandatory fields
 email, phone, password, countryCode, streetAddress, pinCode
 
 Following is sample Body
@@ -52,10 +51,10 @@ Note: After signup, you do not immediately get token. You need to login to get
 ## Delete user
 
 ## Login
-Method: POST
-Endpoint: http://localhost:8000/auth
-Headers: None
-Body:
+* Method: POST
+* Endpoint: http://localhost:8000/auth
+* Headers: None
+* Body:
      email, password
 Following is sample body
 
@@ -73,11 +72,11 @@ Response:
 Expiry for staging is 24 hours and production is one hour.
 
 ## Get user data
-Method: GET
-Endpoint: http://localhost:8000/user
-Headers: token (token received after user login)
-QueryString: email=validEmail@OfTheUser.com
-Body: None
+* Method: GET
+* Endpoint: http://localhost:8000/user
+* Headers: token (token received after user login)
+* QueryString: email=validEmail@OfTheUser.com
+* Body: None
 
 Sample URL: http://localhost:8000/user?email=validEmail@OfTheUser.com
 
@@ -99,11 +98,11 @@ Response:
 }
 
 ## Update user data
-Method: PUT
-Endpoint: http://localhost:8000/user
-Headers: token (token received after login)
-QueryString : email=validEmail@OfTheUser.com
-Body:
+* Method: PUT
+* Endpoint: http://localhost:8000/user
+* Headers: token (token received after login)
+* QueryString : email=validEmail@OfTheUser.com
+* Body:
 email and other fields which you want to update.
 Note 1: You can not update email
 
@@ -133,11 +132,12 @@ Sample Response:
 You will get whole response with update data.
 
 ## Delete user account
-Method: DELETE
-Endpoint: http://localhost:8000/user
-Headers: token (valid token obtained after user login)
-QueryString: email=validEmail@OfTheUser.com
-Body: email=validEmail@OfTheUser.com
+* Method: DELETE
+* Endpoint: http://localhost:8000/user
+* Headers: token (valid token obtained after user login)
+* QueryString: email=validEmail@OfTheUser.com
+* Body: email=validEmail@OfTheUser.com
+
 Note: Email can be passed either through query string or through body. Either of
 it is mandatory.
 
@@ -170,11 +170,11 @@ Sample Response:
 
 
 ## Add item/items to cart
-Method: POST
-Endpoint: http://localhost:8000/cart
-Headers: token
-QueryString: email
-Body: Array with itemid and quantity. Please see sample data below.
+* Method: POST
+* Endpoint: http://localhost:8000/cart
+* Headers: token
+* QueryString: email
+* Body: Array with itemid and quantity. Please see sample data below.
 
 {"id":222222, "quantity":4}
 
@@ -204,28 +204,28 @@ Note: When you send items to cart, it checks the existing cart and if item is
 found in cart then it's count is incremented otherwise it is added to the cart.
 
 ## Get current cart
-Method: GET
-Endpoint: http://localhost:8000/cart?email=validEmailAddress@test.com
-Headers: token
-QueryString: email
-Body: Array with itemid and quantity. Please see sample data below.
+* Method: GET
+* Endpoint: http://localhost:8000/cart?email=validEmailAddress@test.com
+* Headers: token
+* QueryString: email
+* Body: Array with itemid and quantity. Please see sample data below.
 
 The response would be similar one mentioned above in add cart(POST)
 
 ## Delete the cart
-Method: DELETE
-Endpoint: http://localhost:8000/cart?email=validEmailAddress@test.com
-Headers: token
-QueryString: email
-Body: email
+* Method: DELETE
+* Endpoint: http://localhost:8000/cart?email=validEmailAddress@test.com
+* Headers: token
+* QueryString: email
+* Body: email
 You can pass email in either queryString or as a part of body
 
 ## Checkout the cart
-Method: POST
-Endpoint: http://localhost:8000/checkout
-Headers: token
-QueryString: email (email=valid@email.com)
-Body: stripeToken and email (email can be sent as part of queryString also)
+* Method: POST
+* Endpoint: http://localhost:8000/checkout
+* Headers: token
+* QueryString: email (email=valid@email.com)
+* Body: stripeToken and email (email can be sent as part of queryString also)
 
 {"stripeToken":"<<valid stripe token>>"}
 
@@ -235,10 +235,10 @@ Sample Response:
 }
 
 ## Order History
-Method: POST
-Endpoint: http://localhost:8000/history
-Headers : token
-Body : email and orderId
+* Method: POST
+* Endpoint: http://localhost:8000/history
+* Headers : token
+* Body : email and orderId
 Sample Body: {"orderId":"rg0ucdk34c", "email":"validemail@test.com"}
 
 Sample Response:
