@@ -8,7 +8,7 @@ Stripe.
 We have used Mailgun for sending email after order is placed. Use following
 command to set base64 token via command prompt
 
-export MAILGUN=<<Base64 token of mailgun>>
+##### export MAILGUN=<<Base64 token of mailgun>>
 
 The reason being, mailgun privacy policy does not allow the token being committed
 to open repositories like github or bitbucket.
@@ -22,8 +22,8 @@ openly.
 Once these 2 steps are done, you can use one of the following commands to run the
 project.
 
-$ NODE_ENV=staging node index.js // for staging environment
-$ NODE_ENV=production node index.js // for production environment
+##### $ NODE_ENV=staging node index.js // for staging environment
+##### $ NODE_ENV=production node index.js // for production environment
 
 # Services
 It offers following services.
