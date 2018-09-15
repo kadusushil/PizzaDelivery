@@ -16,8 +16,9 @@ The reason being, mailgun privacy policy does not allow the token being committe
 to open repositories like github or bitbucket.
 
 Similar to this, I've also exported Stripe token secret key. Use following command.
+```
 export STRIPE=<<Stripe test secret key>>
-
+```
 The reason is same, it's privacy policy does not allow it's token being flaunted
 openly.
 
