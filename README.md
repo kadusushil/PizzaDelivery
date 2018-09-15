@@ -8,7 +8,9 @@ Stripe.
 We have used Mailgun for sending email after order is placed. Use following
 command to set base64 token via command prompt
 
-##### export MAILGUN=<<Base64 token of mailgun>>
+```
+export MAILGUN=<<Base64 token of mailgun>>
+```
 
 The reason being, mailgun privacy policy does not allow the token being committed
 to open repositories like github or bitbucket.
@@ -22,8 +24,10 @@ openly.
 Once these 2 steps are done, you can use one of the following commands to run the
 project.
 
-##### $ NODE_ENV=staging node index.js // for staging environment
-##### $ NODE_ENV=production node index.js // for production environment
+```
+$ NODE_ENV=staging node index.js // for staging environment
+$ NODE_ENV=production node index.js // for production environment
+```
 
 # Services
 It offers following services.
@@ -37,6 +41,7 @@ email, phone, password, countryCode, streetAddress, pinCode
 
 Following is sample Body
 
+```
 {"email" : "validEmail@OfTheUser.com"
 ,"phone":"1247612741"
 ,"password":"<<password according to password policy>>"
@@ -44,6 +49,7 @@ Following is sample Body
 ,"streetAddress" : "Plot no 21, Badrinath society parate layout, Nagpur, Maharashtra"
 ,"pinCode" : "440025"
 }
+```
 
 **Note:** After signup, you do not immediately get token. You need to login to get
       token which can be used for sub-sequent api calls.
@@ -57,17 +63,20 @@ Following is sample Body
 * Body:
      email, password
 Following is sample body
-
+```
 {"email" : "validEmail@OfTheUser.com"
 ,"password":"<<password according to password policy>>"
 }
+```
 
 Response:
+```
 {
     "token": "wri2zkgbah46oemocm4c",
     "email": "validEmail@OfTheUser.com",
     "expiry": 1537000359708
 }
+```
 
 Expiry for staging is 24 hours and production is one hour.
 
@@ -81,6 +90,7 @@ Expiry for staging is 24 hours and production is one hour.
 Sample URL: http://localhost:8000/user?email=validEmail@OfTheUser.com
 
 Response:
+```
 {
     "email": "validEmail@OfTheUser.com",
     "phone": "3423412412",
@@ -96,6 +106,7 @@ Response:
         "8tiom6sdoj"
     ]
 }
+```
 
 ## Update user data
 * Method: PUT
@@ -114,6 +125,7 @@ Sample URL:
 http://localhost:8000/user?email=validEmail@OfTheUser.com
 
 Sample Response:
+```
 {
     "email": "validEmail@OfTheUser.com",
     "phone": "1287412921",
@@ -129,6 +141,7 @@ Sample Response:
         "8tiom6sdoj"
     ]
 }
+```
 
 You will get whole response with update data.
 
@@ -143,7 +156,9 @@ You will get whole response with update data.
 it is mandatory.
 
 Sample Response:
+```
 {} // empty object
+```
 
 ## Get pizza menu
 * Method: GET
@@ -151,6 +166,7 @@ Sample Response:
 * Headers: token (valid token)
 
 Sample Response:
+```
 [
     {
         "id": 111111,
@@ -168,6 +184,7 @@ Sample Response:
     },
     {... other options ...}
   ]
+  ```
 
 
 ## Add item/items to cart
@@ -177,12 +194,15 @@ Sample Response:
 * QueryString: email
 * Body: Array with itemid and quantity. Please see sample data below.
 
+```
 {"id":222222, "quantity":4}
+```
 
 This tells server, what type of pizza and in how much quantity.
 If the id is not valid then error is returned
 
 Sample Response : It will return current cart
+```
 [
     {
         "id": 333333,
@@ -201,6 +221,7 @@ Sample Response : It will return current cart
         "quantity": 4
     }
 ]
+```
 Note: When you send items to cart, it checks the existing cart and if item is
 found in cart then it's count is incremented otherwise it is added to the cart.
 
@@ -228,21 +249,30 @@ You can pass email in either queryString or as a part of body
 * QueryString: email (email=valid@email.com)
 * Body: stripeToken and email (email can be sent as part of queryString also)
 
+```
 {"stripeToken":"<<valid stripe token>>"}
+```
 
 Sample Response:
+```
 {
     "order_id": "rg0ucdk34c"
 }
+```
 
 ## Order History
 * Method: POST
 * Endpoint: http://localhost:8000/history
 * Headers : token
 * Body : email and orderId
-Sample Body: {"orderId":"rg0ucdk34c", "email":"validemail@test.com"}
+
+Sample Body: 
+```
+{"orderId":"rg0ucdk34c", "email":"validemail@test.com"}
+```
 
 Sample Response:
+```
 {
     "order_id": "rg0ucdk34c",
     "details": [
@@ -264,3 +294,4 @@ Sample Response:
         }
     ]
 }
+```
