@@ -3,13 +3,13 @@
 This project has codebase for assignment #2.
 
 # How to run
-Before you the project, we need to set environment variables for Mailgun and
+Before you run the project, we need to set environment variables for Mailgun and
 Stripe.
 We have used Mailgun for sending email after order is placed. Use following
-command to set base64 token via command prompt
+command to set private key via command prompt
 
 ```
-export MAILGUN=<<Base64 token of mailgun>>
+export MAILGUN=<<private key from mailgun>>
 ```
 
 The reason being, mailgun privacy policy does not allow the token being committed
@@ -55,6 +55,16 @@ Following is sample Body
       token which can be used for sub-sequent api calls.
 
 ## Delete user
+* Method: DELETE
+* Endpoint: http://localhost:8000/user?email=valid@email.com
+* Headers: token
+* Body:
+      email
+
+Sample response
+```
+{}
+```
 
 ## Login
 * Method: POST
@@ -266,7 +276,7 @@ Sample Response:
 * Headers : token
 * Body : email and orderId
 
-Sample Body: 
+Sample Body:
 ```
 {"orderId":"rg0ucdk34c", "email":"validemail@test.com"}
 ```
